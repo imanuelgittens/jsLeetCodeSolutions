@@ -19,30 +19,28 @@ var removeDuplicates = function(nums) {
     var i;
     var j = 0; //keeps track of non duplicates
     var k;
-    
-    if(nums.length === 0){
-      return false;
+
+    if (nums.length === 0) {
+        return false;
     }
-    
+
     var cur = nums[0];
-    
-    for(i = 1; i < nums.length; i++){
-      if(nums[i] !== cur){
-        j++;
-        nums[j] = nums[i];
-        cur = nums[i];
-      }
+
+    for (i = 1; i < nums.length; i++) {
+        if (nums[i] !== cur) {
+            j++;
+            nums[j] = nums[i];
+            cur = nums[i];
+        }
     } //we put all non duplicates to the start of the Array
-    
+
     //since j starts at 0, we add one to get the new length
     j++;
-    
+
     var len = nums.length;
-    
-    for(k = j; k < len; k++){
-      
-      nums.pop(); // remove all duplicated items from array
-      
+
+    for (k = j; k < len; k++) {
+        nums.pop(); // remove all duplicated items from array
     }
     return nums.length;
 };
